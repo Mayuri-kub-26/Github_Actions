@@ -1,4 +1,5 @@
 # All Arthmetic Operations Module
+
 def add(a, b):
     return a + b
 
@@ -49,3 +50,6 @@ def main():
                 print(f"Result: {divide(n1, n2)}")
         else:
             print("Invalid choice. Please select a valid operation.")
+
+if __name__ == "__main__":
+    main()

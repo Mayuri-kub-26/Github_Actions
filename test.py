@@ -46,7 +46,7 @@ class TestArithmeticOperations:
     def test_divide_neg_nums(self):
         assert divide(-10, -2) == 5
     
-    def test_divide_mixed_nums(self):
+    def test_divide_mixed_numbers(self):
         assert divide(-10, 2) == -5
     
     def test_divide_by_zero(self):
@@ -57,3 +57,6 @@ class TestArithmeticOperations:
     
     def test_divide_decimals(self):
         assert divide(7.5, 2.5) == 3.0
+
+if __name__ == "__main__":
+    pytest.main()
