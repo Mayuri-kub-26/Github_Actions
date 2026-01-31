@@ -1,21 +1,6 @@
-# All Arthmetic Operations Module
+from calculator import add, subtract, multiply, divide
 
-def add(a, b):
-    return a + b
-
-def subtract(a, b):
-    return a - b
-
-def multiply(a, b):
-    return a * b
-
-def divide(a, b):
-    if b == 0:
-        return "Cannot divide by zero"
-    return a / b
-
-
-def show_operations():
+def show_menu():
     print("\n--- Arithmetic Operations Menu ---")
     print("1. Add")
     print("2. Subtract")
@@ -25,31 +10,29 @@ def show_operations():
 
 def main():
     while True:
-        show_operations()
+        show_menu()
         choice = input("Select an operation (1-5): ")
 
-        if choice == '5':
-            print("Exiting the program.")
+        if choice == "5":
+            print("Exiting the calculator. Goodbye!")
             break
 
-        if choice in ['1', '2', '3', '4']:
-            try:
-                n1 = float(input("Enter first number: "))
-                n2 = float(input("Enter second number: "))
-            except ValueError:
-                print("Invalid input. Please enter numeric values.")
-                continue
+        a = float(input("Enter first number: "))
+        b = float(input("Enter second number: "))
 
-            if choice == '1':
-                print(f"Result: {add(n1, n2)}")
-            elif choice == '2':
-                print(f"Result: {subtract(n1, n2)}")
-            elif choice == '3':
-                print(f"Result: {multiply(n1, n2    )}")
-            elif choice == '4':
-                print(f"Result: {divide(n1, n2)}")
+        if choice == "1":
+            print("Result:", add(a, b))
+        elif choice == "2":
+            print("Result:", subtract(a, b))
+        elif choice == "3":
+            print("Result:", multiply(a, b))
+        elif choice == "4":
+            try:
+                print("Result:", divide(a, b))
+            except ValueError as e:
+                print("Error:", e)
         else:
-            print("Invalid choice. Please select a valid operation.")
+            print("Invalid choice")
 
 if __name__ == "__main__":
     main()
